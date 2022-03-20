@@ -1,0 +1,8 @@
+#!/bin/bash
+
+exec feh --bg-scale /home/gambo/wallpaper.png & 
+exec dwm
+
+#while true; do
+#	xsetroot -name "` date + "%R"`"
+#done & 
