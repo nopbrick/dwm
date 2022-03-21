@@ -7,3 +7,10 @@ It also includes the .desktop file for LightDM configuration under /usr/share/xs
 
 * dmenu
 * feh
+* transset
+* xcompmgr
+
+## Patches 
+
+* defaulttransparency
+* vanitygaps
