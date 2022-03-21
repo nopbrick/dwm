@@ -1,6 +1,7 @@
 #!/bin/bash
 
-exec feh --bg-scale /home/gambo/wallpaper.png & 
+feh --bg-scale /home/gambo/wp.jpg
+xcompmgr & 
 exec dwm
 
 #while true; do
