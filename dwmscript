@@ -1,9 +1,0 @@
-#!/bin/bash
-
-feh --bg-scale /home/gambo/wp.jpg
-xcompmgr & 
-exec dwm
-
-#while true; do
-#	xsetroot -name "` date + "%R"`"
-#done & 
