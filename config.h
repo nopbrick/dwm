@@ -32,9 +32,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       0,       	    0,           -1 },
+	/* class      instance    title       tags mask     isfloating   opacity        monitor */
+       { "Gimp",     NULL,       NULL,       0,            1,           1.0,           -1 },
+       { "Firefox",  NULL,       NULL,       0,		   0,           1.0,           -1 },
+       { "St",       NULL,       NULL,       0,            0,           defaultopacity, -1},
+
 };
 
 /* layout(s) */
@@ -85,9 +87,9 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,		XK_s,	   spawn,	   SHCMD("transset -a --dec .1") },
-	{ MODKEY|ShiftMask,		XK_d,	   spawn,	   SHCMD("transset -a --inc .1") },
-	{ MODKEY|ShiftMask,		XK_f,	   spawn,	   SHCMD("transset -a .85") },
+	{ MODKEY|ShiftMask,		XK_s,	   spawn,	   SHCMD("transset-df -a --dec .1") },
+	{ MODKEY|ShiftMask,		XK_d,	   spawn,	   SHCMD("transset-df -a --inc .1") },
+	{ MODKEY|ShiftMask,		XK_f,	   spawn,	   SHCMD("transset-df -a .85") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -128,6 +130,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY|ShiftMask,		XK_KP_Add, changeopacity,	{.f = +0.1}},
+	{ MODKEY|ShiftMask,		XK_KP_Subtract, changeopacity,  {.f = -0.1}},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
