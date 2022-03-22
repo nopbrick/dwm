@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Name=Dwm
 Comment=Dynamic window manager
-Exec=/home/gambo/dwmscript
+Exec=/home/gambo/.scripts/dwmscript
 Icon=dwm
 Type=XSession
