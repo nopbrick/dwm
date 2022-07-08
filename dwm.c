@@ -1073,6 +1073,7 @@ manage(Window w, XWindowAttributes *wa)
 	if (XGetTransientForHint(dpy, w, &trans) && (t = wintoclient(trans))) {
 		c->mon = t->mon;
 		c->tags = t->tags;
+		applyrules(c);
 	} else {
 		c->mon = selmon;
 		applyrules(c);
