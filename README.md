@@ -9,6 +9,11 @@ It also includes the .desktop file for LightDM configuration under /usr/share/xs
 * feh
 * transset
 * xcompmgr
+* libc6-dev
+* libx11-dev
+* libxft-dev
+* libxinerama-dev
+* xbacklight
 
 ## Patches 
 

@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
+#define BrightUp	0x1008ff02
+#define BrightDown	0x1008ff03
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -69,6 +72,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod1Mask
+#define SUPER  Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -90,6 +94,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_s,	   spawn,	   SHCMD("transset -a --dec .1") },
 	{ MODKEY|ShiftMask,		XK_d,	   spawn,	   SHCMD("transset -a --inc .1") },
 	{ MODKEY|ShiftMask,		XK_f,	   spawn,	   SHCMD("transset -a .85") },
+	{ 0,				BrightUp,  spawn,	   SHCMD("xbacklight -inc 10") },
+	{ 0,				BrightDown,spawn,	   SHCMD("xbacklight -dec 10") },
+	{ SUPER,			XK_l,	   spawn,	   SHCMD("dm-tool lock") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

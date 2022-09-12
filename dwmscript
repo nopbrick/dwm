@@ -1,17 +1,39 @@
 #!/bin/bash
 
-feh --bg-scale /home/gambo/Downloads/7137245.png
-xcompmgr & 
+feh --bg-scale /home/gambo/wp.jpg
+#xcompmgr & 
+#dte(){
+#	dte=$(date)
+#	echo -e " $(dte)"
+#
+#}
+
+#cpu() {
+#	read cpu a b c previdle rest < /proc/stat
+#	prevtotal=$((a+b+c+previdle))
+#	read cpu a b c idle rest < /proc/stat
+#	total=$((a+b+c+idle))
+#	cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
+#	echo -e " $cpu% cpu"
+#}
 
 while true; do
 	xsetroot -name "$(/home/gambo/.scripts/dte)"
 	sleep 1s
+xcompmgr & 
 done & 
 
-export AWK_TOOLKIT=MToolkit & 
 
-#If you're using vmware uncomment below line for open-vm-tools to work
-#/usr/bin/vmware-user-suid-wrapper & 
+
+
+
+
+
+
+
+
+
+
 
 exec dwm
 
