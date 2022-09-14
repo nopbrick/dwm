@@ -17,23 +17,11 @@ feh --bg-scale /home/gambo/wp.jpg
 #	echo -e " $cpu% cpu"
 #}
 
-while true; do
-	xsetroot -name "$(/home/gambo/.scripts/dte)"
-	sleep 1s
-xcompmgr & 
-done & 
-
-
-
-
-
-
-
-
-
-
-
-
+#while true; do
+#	xsetroot -name "$(/home/gambo/.scripts/dte)"
+#	sleep 1s
+xcompmgr &  
+slstatus &
 
 exec dwm
 
